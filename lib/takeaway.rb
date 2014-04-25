@@ -6,10 +6,11 @@ end
 
 class MenuItem < Takeaway
 	attr_reader :name
-	
-	def initialize(name)
+	attr_reader :price
+
+	def initialize(name,price=1)
 		@name=name
-		# @price=price
+		@price=price
 	end
 
 end

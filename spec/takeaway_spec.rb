@@ -18,6 +18,14 @@ describe Takeaway do
 			expect(soup.name).to eq("Soup")
 		end
 
+		it 'each menu item should have a price'do
+			fish = MenuItem.new("Fish",5)
+			expect(fish.price).to eq(5)
+		end
+
+
+
+
 	end	
 end
 

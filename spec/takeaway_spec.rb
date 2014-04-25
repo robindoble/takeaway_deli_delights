@@ -9,21 +9,18 @@ describe Takeaway do
 			expect(Takeaway.new.class).to be_true
 		end
 
-		it 'should have a Menu subclass' do 
-			expect(MenuItem.new("dummy_name").class).to be_true
-		end
+			it 'should initialize with a Menu with 5 options' do 
+				expect(Takeaway.new.menu.count).to be(5)
+			end
 
-		it 'each menu item should have a name' do
-			soup = MenuItem.new("Soup")			
-			expect(soup.name).to eq("Soup")
-		end
-
-		it 'each menu item should have a price'do
-			fish = MenuItem.new("Fish",5)
-			expect(fish.price).to eq(5)
-		end
+		
+		# it 'should have a menu class which yields a pre set menu' do
+		# 	menu=Menu.new
+		# 	expect(menu.to_a.count).to eq(5)
+		# end
 
 
+		
 
 
 	end	

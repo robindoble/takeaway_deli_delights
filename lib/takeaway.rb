@@ -22,17 +22,23 @@ class Takeaway
 		line_break
 		puts "Hello, welcome to FoodDirect online, please choose a menu item?"
 		choice=gets.chomp
-		build_order(choice.downcase.to_sym)
+		order_checker(choice.downcase.to_sym)
 	end
 
-	def build_order(choice)
+	def order_checker(choice)
 		if @menu.keys.include?(choice) 
-			order << choice
-			# quantity_choser
+			quantity_chooser(choice)
 		else
-			line_break
-			"Choose again"	
+			# line_break
+			# puts "Choose again please"	
 		end	
+	end
+	
+	def quantity_chooser(choice)
+		# line_break
+		# puts "Please choose your desired quantity"
+		quantity = gets.chomp
+		order << [quantity,choice]
 	end
 
 end

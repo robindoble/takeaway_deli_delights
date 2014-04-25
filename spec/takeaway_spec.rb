@@ -20,10 +20,15 @@ describe Takeaway do
 		end
 		
 		it 'user choice should be added to an order list' do
-			# takeaway.stub(:show_menu).and_return(:)
-			takeaway.build_order(:soup)
+			takeaway.order_checker(:soup)
 			expect(takeaway.order.count).to eq(1)
 		end
+
+		it 'user must choose desired quantity on making each choice' do 
+			takeaway.order_checker(:soup)
+			expect(takeaway.order[0][0].to_i).to eq(1)
+		end
+
 
 		# it 'one should be able to add a choice to the order' do
 

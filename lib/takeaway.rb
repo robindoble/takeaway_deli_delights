@@ -1,4 +1,9 @@
+require_relative 'twilio_take'
+require_relative 'time'
+	
 class T
+
+	include Twilio
 
 	attr_reader :menu	
 	attr_reader :order
@@ -9,8 +14,6 @@ class T
 
 	def initialize
 		@menu = {soup: 2, fish: 5, meat: 5, salad: 3, pizza: 4}
-		# @order = [["1",:soup], ["1",:meat],["1",:salad],["1",:pizza]]
-		# show_menu
 	end
 
 	def line_break
@@ -67,7 +70,7 @@ class T
 
 	def check_total
 		# puts order.inspect
-		view_order
+		# view_order
 		puts "Please add the subtotal and hit enter to complete order"
 		# puts menu
 		user_total = gets.chomp.to_i
@@ -78,25 +81,20 @@ class T
 
 	def complete_order
 		if check_total
-			""
+			send_sms(text_message)
 		else
 			raise "That is the wrong amount, sorry!"
 		end
-
 	end
 
-	# def order_checker(choice)
-	# 	menu.keys.include?(choice)	
-	# end
+	def text_message
+		# time = Time.new
+		return "Thank you, your order will be with you in #{DeliveryTime.new}"
+	end
 	
 	def order_builder(quantity, choice)
 		order << [quantity,choice]
-		# puts order.inspect
-		# show_menu
 	end
-
-
-
 
 end
 

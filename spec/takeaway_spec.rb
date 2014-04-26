@@ -59,16 +59,22 @@ describe T do
 			expect{takeaway.complete_order}.to raise_error
 		end
 
-		# it 'should send the user a text message telling ' do
+
+
+
+		# it 'should send the user a text message' do
 		# 	takeaway.stub(:gets).and_return("soup\n","1\n","4\n")
 		# 	takeaway.add_order
-		# 	takeaway.stub(:gets).and_return("12\n")
-		# 	expect{takeaway.complete_order}.to raise_error
+		# 	takeaway.stub(:gets).and_return("2\n")
+		# 	expect(takeaway.complete_order).to be_true
 		# end
 
-
-
-
+		# expect(takeaway).to recieve(complete_order)
+		# # 	takeaway.stub(:gets).and_return("soup\n","1\n","4\n")
+		# # 	takeaway.add_order
+		# # 	takeaway.stub(:gets).and_return("12\n")
+		# # 	expect{takeaway.complete_order}.to raise_error
+		# end
 
 	end	
 

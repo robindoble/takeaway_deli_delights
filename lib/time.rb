@@ -1,0 +1,10 @@
+class Time
+
+
+
+
+
+
+
+
+end
